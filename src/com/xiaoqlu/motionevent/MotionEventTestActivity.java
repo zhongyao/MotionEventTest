@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 /**
- * 事件分发机制（先分发事件、再消费事件、最后可形成一个循环--这种情况就是最外层的view分发事件，但是没有view消费，最后还是有最外层的view来消费的情况）：
+ * 事件分发机制（先分发事件、再消费事件、最后可形成一个循环--这种情况就是最外层的view分发事件，但是没有子view消费的话，最后还是有最外层的view来消费的情况）：
  * 三层View，从外到内依次为： LayoutView1、LayoutView2、MyTextView。
  * 分别使用view1、view2、view3代替。
  * 最外层view1--调用dispatchTouchEvent分发事件--onInterceptTouchEvent返回false--继续往下分发事件
